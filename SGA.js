@@ -37,7 +37,7 @@ async function main()
 
     let today = new Date();
     let day = today.getDate();
-    let month = today.getMonth() + 1; // January is 0
+    let month = today.getMonth() + 1;
     let year = today.getFullYear();
 
     let formattedDate = ("0" + day).slice(-2) + "/" + ("0" + month).slice(-2) + "/" + year;
@@ -85,32 +85,17 @@ async function main()
 
     await sleep(1000);
 
-    // Create the list of employees with checkboxes
     let listContainer = document.createElement("ul");
 
     listContainer.style.position = "fixed";
     listContainer.style.top = "10%";
     listContainer.style.left = "10px";
-    //listContainer.style.transform = "translateY(-70%)";
-    listContainer.style.padding = "0"; // Added to remove default padding
-
-    /*
-    // Create the list title
-    let listTitle = document.createElement("h2");
-    listTitle.textContent = "Funcionários ausentes:";
-    listTitle.style.fontFamily = "Arial, sans-serif";
-    listTitle.style.fontWeight = "bold";
-    listTitle.style.margin = "0";
-    listTitle.style.marginBottom = "10px"; // Adjust the margin-bottom value for spacing
-    listTitle.style.fontSize = "16px"; // Adjust the font size of the title
-
-    listContainer.appendChild(listTitle);
-    */
+    listContainer.style.padding = "0";
 
     employees.forEach((employee) => {
         let listItem = document.createElement("li");
         listItem.style.listStyle = "none";
-        listItem.style.marginBottom = "0px"; // Adjust the margin-bottom value to reduce space between lines
+        listItem.style.marginBottom = "0px";
         listItem.style.display = "flex";
         listItem.style.alignItems = "center";
 
@@ -122,7 +107,7 @@ async function main()
         let label = document.createElement("label");
         label.textContent = employee;
         label.style.fontFamily = "Arial, sans-serif";
-        label.style.marginTop = "09px"; // Adjust the margin-top value to position the names
+        label.style.marginTop = "09px";
 
         listItem.appendChild(checkbox);
         listItem.appendChild(label);
@@ -130,7 +115,6 @@ async function main()
         listContainer.appendChild(listItem);
     });
 
-    // Append the list to the specified element
     let containerElement = document.querySelector("body > div.container");
     containerElement.appendChild(listContainer);
 
@@ -201,7 +185,7 @@ async function main()
 
         let today = new Date();
         let day = today.getDate();
-        let month = today.getMonth() + 1; // January is 0
+        let month = today.getMonth() + 1;
         let year = today.getFullYear();
 
         let currentHour = today.getHours().toString().padStart(2, '0');
@@ -270,11 +254,9 @@ async function main()
         lunch = [...new Set(lunch)];
         absentEmployees = [...new Set(absentEmployees)];
 
-        // Remove absent employees from the employees array
         let availableEmployees = employees.filter(employee => !lunch.includes(employee))
         availableEmployees = availableEmployees.filter(employee => !absentEmployees.includes(employee))
         let attendingList = availableEmployees;
-
 
         let index = -1;
         let position = "";
@@ -393,7 +375,7 @@ async function main()
         }
 
 
-        if (largestTime === waitTime)// && queue <= 2)
+        if (largestTime === waitTime)
         {
             document.querySelector("head > title").innerHTML = "[0] Fila vazia";
             document.querySelector("body > div.container > div > div.header > p").innerText = `[0] Fila vazia | Sua posição atual é: ${position}`;
@@ -440,7 +422,6 @@ async function main()
             return notification();
         }
     }
-    //await sleep(1000);
     return notification();
 }
 main();
