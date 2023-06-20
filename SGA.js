@@ -179,6 +179,8 @@ async function main()
         return checkboxStates && checkboxStates[employee] ? checkboxStates[employee] : false;
     }
 
+    await sleep(6000);
+
     async function notification()
     {
         let lunch = [];
@@ -257,6 +259,7 @@ async function main()
         let availableEmployees = employees.filter(employee => !lunch.includes(employee))
         availableEmployees = availableEmployees.filter(employee => !absentEmployees.includes(employee))
         let attendingList = availableEmployees;
+
 
         let index = -1;
         let position = "";
@@ -413,8 +416,7 @@ async function main()
 
         if (attendingList.includes(servidor) && largestTime !== waitTime)
         {
-            await sleep(23000);
-            new Notification("Ir pro guichê!");
+            new Notification("Atenção! Ir pro guichê!");
             return notification();
         }
         else
