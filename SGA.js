@@ -179,8 +179,6 @@ async function main()
         return checkboxStates && checkboxStates[employee] ? checkboxStates[employee] : false;
     }
 
-    await sleep(6000);
-
     async function notification()
     {
         let lunch = [];
