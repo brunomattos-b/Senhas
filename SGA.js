@@ -13,6 +13,8 @@
 
 async function main()
 {
+    // teste de atualização
+    
     let reset = setTimeout(function() {
         location.reload();
     }, 600000);
