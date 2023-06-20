@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         SGA Monitor
+// @name         SGA Monitor (Junho/2023)
 // @namespace    SGA Monitor - Escala DDA
-// @version      1.0.1
+// @version      1.0.2
 // @downloadURL  https://raw.githubusercontent.com/brunomattos-b/SGA/main/SGA.js
 // @updateURL    https://raw.githubusercontent.com/brunomattos-b/SGA/main/SGA.js
 // @description  Exibe a escala do dia, e notifica quando o servidor tem que ir pro atendimento
