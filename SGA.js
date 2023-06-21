@@ -6,8 +6,8 @@
 // @updateURL    https://raw.githubusercontent.com/brunomattos-b/SGA/main/SGA.js
 // @description  Exibe a escala do dia, e notifica quando o servidor tem que ir pro atendimento
 // @author       Bruno Mattos Barbalho
-// @match        https://10.0.0.43/novosga/public/modules/sga.monitor
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=0.43
+// @match        http*://10.0.0.43/novosga/public/modules/sga.monitor
+// @icon         http*://www.google.com/s2/favicons?sz=64&domain=0.43
 // @grant        GM_addStyle
 // ==/UserScript==
 
