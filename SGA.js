@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name         SGA Monitor
-// @namespace    SGA Monitor - Escala Junho de 2023
-// @version      1.0.1
+// @namespace    SGA Monitor - Escala
+// @version      1.0.2
 // @downloadURL  https://raw.githubusercontent.com/brunomattos-b/SGA/main/SGA.js
 // @updateURL    https://raw.githubusercontent.com/brunomattos-b/SGA/main/SGA.js
 // @description  Exibe a escala do dia, e notifica quando o servidor tem que ir pro atendimento
 // @author       Bruno Mattos Barbalho
-// @match        https://10.0.0.43/novosga/public/modules/sga.monitor
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=0.43
+// @match        http*://10.0.0.43/novosga/public/modules/sga.monitor
+// @icon         http*://www.google.com/s2/favicons?sz=64&domain=0.43
 // @grant        GM_addStyle
 // ==/UserScript==
 
@@ -39,32 +39,31 @@ async function main()
     let formattedDate = ("0" + day).slice(-2) + "/" + ("0" + month).slice(-2) + "/" + year;
 
     let data = [
-        ["31/05/2023", "Yasmin", "Vanessa", "Rafael", "Dimas", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia"],
-        ["01/06/2023", "Yasmin", "Vanessa", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Flávia"],
-        ["02/06/2023", "Yasmin", "Vanessa", "Mattos", "Ligia", "Rafael", "Dimas", "Flávia", "Cinthia", "Bonin", "Ewerton"],
-        ["05/06/2023", "Yasmin", "Vanessa", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas"],
-        ["06/06/2023", "Yasmin", "Vanessa", "Ligia", "Rafael", "Dimas", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos"],
-        ["07/06/2023", "Yasmin", "Vanessa", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Flávia", "Cinthia", "Bonin"],
-        ["12/06/2023", "Yasmin", "Vanessa", "Dimas", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafeal", "Marcelo"],
-        ["13/06/2023", "Yasmin", "Vanessa", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia"],
-        ["14/06/2023", "Yasmin", "Vanessa", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia"],
-        ["15/06/2023", "Yasmin", "Vanessa", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia"],
-        ["16/06/2023", "Yasmin", "Vanessa", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton"],
-        ["19/06/2023", "Yasmin", "Vanessa", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo"],
-        ["20/06/2023", "Yasmin", "Vanessa", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos"],
-        ["21/06/2023", "Yasmin", "Vanessa", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas"],
-        ["22/06/2023", "Yasmin", "Vanessa", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin"],
-        ["23/06/2023", "Yasmin", "Vanessa", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael"],
-        ["26/06/2023", "Yasmin", "Vanessa", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia"],
-        ["27/06/2023", "Yasmin", "Vanessa", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia"],
-        ["28/06/2023", "Yasmin", "Vanessa", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia"],
-        ["29/06/2023", "Yasmin", "Vanessa", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton"],
-        ["30/06/2023", "Yasmin", "Vanessa", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo"],
-        ["03/07/2023", "Yasmin", "Vanessa", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos"],
-        ["04/07/2023", "Yasmin", "Vanessa", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas"],
-        ["05/07/2023", "Yasmin", "Vanessa", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin"],
-        ["06/07/2023", "Yasmin", "Vanessa", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael"],
-        ["07/07/2023", "Yasmin", "Vanessa", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia"]
+        ["29/06/2023", "Yasmin", "Vanessa", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Bonin", "Cinthia", "Ewerton"],
+        ["30/06/2023", "Yasmin", "Vanessa", "Bonin", "Cinthia", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo"],
+        ["03/07/2023", "Yasmin", "Vanessa", "Ligia", "Rafael", "Dimas", "Marcelo", "Bonin", "Cinthia", "Ewerton", "Mattos"],
+        ["04/07/2023", "Yasmin", "Vanessa", "Marcelo", "Bonin", "Cinthia", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas"],
+        ["05/07/2023", "Yasmin", "Vanessa", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Bonin", "Cinthia"],
+        ["06/07/2023", "Yasmin", "Vanessa", "Dimas", "Marcelo", "Bonin", "Cinthia", "Ewerton", "Mattos", "Ligia", "Rafael"],
+        ["07/07/2023", "Yasmin", "Vanessa", "Cinthia", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Bonin"],
+        ["10/07/2023", "Yasmin", "Vanessa", "Rafael", "Dimas", "Marcelo", "Bonin", "Cinthia", "Ewerton", "Mattos", "Ligia"],
+        ["11/07/2023", "Yasmin", "Vanessa", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Bonin", "Cinthia", "Ewerton"],
+        ["12/07/2023", "Yasmin", "Vanessa", "Bonin", "Cinthia", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo"],
+        ["13/07/2023", "Yasmin", "Vanessa", "Ligia", "Rafael", "Dimas", "Marcelo", "Bonin", "Cinthia", "Ewerton", "Mattos"],
+        ["14/07/2023", "Yasmin", "Vanessa", "Marcelo", "Bonin", "Cinthia", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas"],
+        ["17/07/2023", "Yasmin", "Vanessa", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Bonin", "Cinthia"],
+        ["18/07/2023", "Yasmin", "Vanessa", "Dimas", "Marcelo", "Bonin", "Cinthia", "Ewerton", "Mattos", "Ligia", "Rafael"],
+        ["19/07/2023", "Yasmin", "Vanessa", "Cinthia", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Bonin"],
+        ["20/07/2023", "Yasmin", "Vanessa", "Rafael", "Dimas", "Marcelo", "Bonin", "Cinthia", "Ewerton", "Mattos", "Ligia"],
+        ["21/07/2023", "Yasmin", "Vanessa", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Bonin", "Cinthia", "Ewerton"],
+        ["24/07/2023", "Yasmin", "Vanessa", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo"],
+        ["25/07/2023", "Yasmin", "Vanessa", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos"],
+        ["26/07/2023", "Yasmin", "Vanessa", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas"],
+        ["27/07/2023", "Yasmin", "Vanessa", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin"],
+        ["28/07/2023", "Yasmin", "Vanessa", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael"],
+        ["31/07/2023", "Yasmin", "Vanessa", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia"],
+        ["01/08/2023", "Yasmin", "Vanessa", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia"],
+        ["02/08/2023", "Yasmin", "Vanessa", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia"]
     ];
 
     let todayData = data.find(function (entry) {
@@ -77,7 +76,7 @@ async function main()
     document.querySelector("head > title").innerHTML = "Novo SGA | Loading...";
     document.querySelector("body > div.container > div > div.header > h2").innerText = "Loading...";
     document.querySelector("body > div.container > div > div.header > p").innerText = "Please wait...";
-    document.querySelector("#footer > p").innerText = "Novo SGA v1.4.0 enhanced by Bruno Mattos";
+    document.querySelector("#footer > p").innerText = "Developed by Bruno Mattos";
 
     await sleep(1000);
 
@@ -113,6 +112,14 @@ async function main()
 
     let containerElement = document.querySelector("body > div.container");
     containerElement.appendChild(listContainer);
+
+    var textElement = document.createElement("div");
+    textElement.style.position = "fixed";
+    textElement.style.bottom = "10px";
+    textElement.style.left = "10px";
+    textElement.textContent = "Escala de 29/06/2023 a 02/08/2023 (v1.0.2)";
+
+    document.body.appendChild(textElement);
 
     function sleep(ms)
     {
