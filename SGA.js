@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SGA Monitor
 // @namespace    SGA Monitor - Escala
-// @version      1.0.2
+// @version      1.0.3
 // @downloadURL  https://raw.githubusercontent.com/brunomattos-b/SGA/main/SGA.js
 // @updateURL    https://raw.githubusercontent.com/brunomattos-b/SGA/main/SGA.js
 // @description  Exibe a escala do dia, e notifica quando o servidor tem que ir pro atendimento
@@ -56,14 +56,14 @@ async function main()
         ["19/07/2023", "Yasmin", "Vanessa", "Cinthia", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Bonin"],
         ["20/07/2023", "Yasmin", "Vanessa", "Rafael", "Dimas", "Marcelo", "Bonin", "Cinthia", "Ewerton", "Mattos", "Ligia"],
         ["21/07/2023", "Yasmin", "Vanessa", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Bonin", "Cinthia", "Ewerton"],
-        ["24/07/2023", "Yasmin", "Vanessa", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo"],
-        ["25/07/2023", "Yasmin", "Vanessa", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos"],
-        ["26/07/2023", "Yasmin", "Vanessa", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas"],
-        ["27/07/2023", "Yasmin", "Vanessa", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin"],
-        ["28/07/2023", "Yasmin", "Vanessa", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael"],
-        ["31/07/2023", "Yasmin", "Vanessa", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia"],
-        ["01/08/2023", "Yasmin", "Vanessa", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia"],
-        ["02/08/2023", "Yasmin", "Vanessa", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia"]
+        ["24/07/2023", "Yasmin", "Vanessa", "Jéssica", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo"],
+        ["25/07/2023", "Yasmin", "Vanessa", "Jéssica", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos"],
+        ["26/07/2023", "Yasmin", "Vanessa", "Jéssica", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas"],
+        ["27/07/2023", "Yasmin", "Vanessa", "Jéssica", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin"],
+        ["28/07/2023", "Yasmin", "Vanessa", "Jéssica", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael"],
+        ["31/07/2023", "Yasmin", "Vanessa", "Jéssica", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia"],
+        ["01/08/2023", "Yasmin", "Vanessa", "Jéssica", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia"],
+        ["02/08/2023", "Yasmin", "Vanessa", "Jéssica", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia"]
     ];
 
     let todayData = data.find(function (entry) {
@@ -117,7 +117,7 @@ async function main()
     textElement.style.position = "fixed";
     textElement.style.bottom = "10px";
     textElement.style.left = "10px";
-    textElement.textContent = "Escala de 29/06/2023 a 02/08/2023 (v1.0.2)";
+    textElement.textContent = "Escala de 25/07/2023 a 02/08/2023 (v1.0.3)";
 
     document.body.appendChild(textElement);
 
@@ -210,14 +210,14 @@ async function main()
         {
             lunch.push("Dimas");
             lunch.push("Ewerton");
-            lunch.push("Jessica");
+            lunch.push("Jéssica");
             lunch.push("Bonin");
             lunch.push("Ligia");
             lunch.push("Flávia");
         }
         else if (currentTime >= "12:30:00" && currentTime < "13:00:00")
         {
-            lunch.push("Jessica");
+            lunch.push("Jéssica");
             lunch.push("Bonin");
             lunch.push("Ligia");
             lunch.push("Flávia");
@@ -279,37 +279,38 @@ async function main()
             case 0:
             case 1:
             case 2:
+            case 3:
                 position = "Fixo";
                 break;
-            case 3:
+            case 4:
                 position = "10min (Suplente 1)";
                 break;
-            case 4:
+            case 5:
                 position = "20min (Suplente 2)";
                 break;
-            case 5:
+            case 6:
                 position = "30min (Suplente 3)";
                 break;
-            case 6:
+            case 7:
                 position = "Suplente 4";
                 break;
-            case 7:
+            case 8:
                 position = "Suplente 5";
                 break;
-            case 8:
+            case 9:
                 position = "Suplente 6";
                 break;
-            case 9:
+            case 10:
                 position = "Suplente 7";
                 break;
-            case 10:
+            case 11:
                 position = "Suplente 8";
                 break;
         }
 
         if (document.querySelector("#servico-1 > ul").children[0] === undefined)
         {
-            attendingList = availableEmployees.slice(0, 3);
+            attendingList = availableEmployees.slice(0, 4);
             document.querySelector("head > title").innerHTML = "[0] Fila vazia";
             if (index !== -1)
             {
@@ -342,37 +343,37 @@ async function main()
 
         if (largestTime === waitTime)
         {
-            attendingList = availableEmployees.slice(0, 3);
+            attendingList = availableEmployees.slice(0, 4);
             document.querySelector("body > div.container > div > div.header > h2").innerText = attendingList.join(" | ");
             console.log(`Funcionários atendendo: ${attendingList}`);
         }
         else if (currentTime >= "16:00:00")
         {
-            attendingList = availableEmployees.slice(2, 9);
+            attendingList = availableEmployees.slice(3, 10);
             document.querySelector("body > div.container > div > div.header > h2").innerText = attendingList.join(" | ");
             console.log(`Funcionários atendendo: ${attendingList}`);
         }
         else if (waitTime >= "00:30:00" || (currentTime >= "16:00:00" && currentTime < "17:00:00"))
         {
-            attendingList = availableEmployees.slice(0, 6);
+            attendingList = availableEmployees.slice(0, 7);
             document.querySelector("body > div.container > div > div.header > h2").innerText = attendingList.join(" | ");
             console.log(`Funcionários atendendo: ${attendingList}`);
         }
         else if (waitTime >= "00:20:00")
         {
-            attendingList = availableEmployees.slice(0, 5);
+            attendingList = availableEmployees.slice(0, 6);
             document.querySelector("body > div.container > div > div.header > h2").innerText = attendingList.join(" | ");
             console.log(`Funcionários atendendo: ${attendingList}`);
         }
         else if (waitTime >= "00:10:00")
         {
-            attendingList = availableEmployees.slice(0, 4);
+            attendingList = availableEmployees.slice(0, 5);
             document.querySelector("body > div.container > div > div.header > h2").innerText = attendingList.join(" | ");
             console.log(`Funcionários atendendo: ${attendingList}`);
         }
         else
         {
-            attendingList = availableEmployees.slice(0, 3);
+            attendingList = availableEmployees.slice(0, 4);
             document.querySelector("body > div.container > div > div.header > h2").innerText = attendingList.join(" | ");
             console.log(`Funcionários atendendo: ${attendingList}`);
         }
