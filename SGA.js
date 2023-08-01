@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SGA Monitor
 // @namespace    SGA Monitor - Escala
-// @version      1.0.3
+// @version      1.0.4
 // @downloadURL  https://raw.githubusercontent.com/brunomattos-b/SGA/main/SGA.js
 // @updateURL    https://raw.githubusercontent.com/brunomattos-b/SGA/main/SGA.js
 // @description  Exibe a escala do dia, e notifica quando o servidor tem que ir pro atendimento
@@ -39,31 +39,31 @@ async function main()
     let formattedDate = ("0" + day).slice(-2) + "/" + ("0" + month).slice(-2) + "/" + year;
 
     let data = [
-        ["29/06/2023", "Yasmin", "Vanessa", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Bonin", "Cinthia", "Ewerton"],
-        ["30/06/2023", "Yasmin", "Vanessa", "Bonin", "Cinthia", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo"],
-        ["03/07/2023", "Yasmin", "Vanessa", "Ligia", "Rafael", "Dimas", "Marcelo", "Bonin", "Cinthia", "Ewerton", "Mattos"],
-        ["04/07/2023", "Yasmin", "Vanessa", "Marcelo", "Bonin", "Cinthia", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas"],
-        ["05/07/2023", "Yasmin", "Vanessa", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Bonin", "Cinthia"],
-        ["06/07/2023", "Yasmin", "Vanessa", "Dimas", "Marcelo", "Bonin", "Cinthia", "Ewerton", "Mattos", "Ligia", "Rafael"],
-        ["07/07/2023", "Yasmin", "Vanessa", "Cinthia", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Bonin"],
-        ["10/07/2023", "Yasmin", "Vanessa", "Rafael", "Dimas", "Marcelo", "Bonin", "Cinthia", "Ewerton", "Mattos", "Ligia"],
-        ["11/07/2023", "Yasmin", "Vanessa", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Bonin", "Cinthia", "Ewerton"],
-        ["12/07/2023", "Yasmin", "Vanessa", "Bonin", "Cinthia", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo"],
-        ["13/07/2023", "Yasmin", "Vanessa", "Ligia", "Rafael", "Dimas", "Marcelo", "Bonin", "Cinthia", "Ewerton", "Mattos"],
-        ["14/07/2023", "Yasmin", "Vanessa", "Marcelo", "Bonin", "Cinthia", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas"],
-        ["17/07/2023", "Yasmin", "Vanessa", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Bonin", "Cinthia"],
-        ["18/07/2023", "Yasmin", "Vanessa", "Dimas", "Marcelo", "Bonin", "Cinthia", "Ewerton", "Mattos", "Ligia", "Rafael"],
-        ["19/07/2023", "Yasmin", "Vanessa", "Cinthia", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Bonin"],
-        ["20/07/2023", "Yasmin", "Vanessa", "Rafael", "Dimas", "Marcelo", "Bonin", "Cinthia", "Ewerton", "Mattos", "Ligia"],
-        ["21/07/2023", "Yasmin", "Vanessa", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Bonin", "Cinthia", "Ewerton"],
-        ["24/07/2023", "Yasmin", "Vanessa", "Jéssica", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo"],
-        ["25/07/2023", "Yasmin", "Vanessa", "Jéssica", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos"],
-        ["26/07/2023", "Yasmin", "Vanessa", "Jéssica", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas"],
-        ["27/07/2023", "Yasmin", "Vanessa", "Jéssica", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin"],
-        ["28/07/2023", "Yasmin", "Vanessa", "Jéssica", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael"],
-        ["31/07/2023", "Yasmin", "Vanessa", "Jéssica", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia"],
-        ["01/08/2023", "Yasmin", "Vanessa", "Jéssica", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia"],
-        ["02/08/2023", "Yasmin", "Vanessa", "Jéssica", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia"]
+        ["29/06/2023", "Vanessa", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Bonin", "Cinthia", "Ewerton"],
+        ["30/06/2023", "Vanessa", "Bonin", "Cinthia", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo"],
+        ["03/07/2023", "Vanessa", "Ligia", "Rafael", "Dimas", "Marcelo", "Bonin", "Cinthia", "Ewerton", "Mattos"],
+        ["04/07/2023", "Vanessa", "Marcelo", "Bonin", "Cinthia", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas"],
+        ["05/07/2023", "Vanessa", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Bonin", "Cinthia"],
+        ["06/07/2023", "Vanessa", "Dimas", "Marcelo", "Bonin", "Cinthia", "Ewerton", "Mattos", "Ligia", "Rafael"],
+        ["07/07/2023", "Vanessa", "Cinthia", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Bonin"],
+        ["10/07/2023", "Vanessa", "Rafael", "Dimas", "Marcelo", "Bonin", "Cinthia", "Ewerton", "Mattos", "Ligia"],
+        ["11/07/2023", "Vanessa", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Bonin", "Cinthia", "Ewerton"],
+        ["12/07/2023", "Vanessa", "Bonin", "Cinthia", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo"],
+        ["13/07/2023", "Vanessa", "Ligia", "Rafael", "Dimas", "Marcelo", "Bonin", "Cinthia", "Ewerton", "Mattos"],
+        ["14/07/2023", "Vanessa", "Marcelo", "Bonin", "Cinthia", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas"],
+        ["17/07/2023", "Vanessa", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Bonin", "Cinthia"],
+        ["18/07/2023", "Vanessa", "Dimas", "Marcelo", "Bonin", "Cinthia", "Ewerton", "Mattos", "Ligia", "Rafael"],
+        ["19/07/2023", "Vanessa", "Cinthia", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Bonin"],
+        ["20/07/2023", "Vanessa", "Rafael", "Dimas", "Marcelo", "Bonin", "Cinthia", "Ewerton", "Mattos", "Ligia"],
+        ["21/07/2023", "Vanessa", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Bonin", "Cinthia", "Ewerton"],
+        ["24/07/2023", "Vanessa", "Jéssica", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo"],
+        ["25/07/2023", "Vanessa", "Jéssica", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos"],
+        ["26/07/2023", "Vanessa", "Jéssica", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas"],
+        ["27/07/2023", "Vanessa", "Jéssica", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin"],
+        ["28/07/2023", "Vanessa", "Jéssica", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael"],
+        ["31/07/2023", "Vanessa", "Jéssica", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia"],
+        ["01/08/2023", "Vanessa", "Jéssica", "Rafael", "Bonin", "Marcelo", "Flávia", "Cinthia", "Dimas", "Ewerton", "Mattos", "Ligia"],
+        ["02/08/2023", "Vanessa", "Jéssica", "Cinthia", "Dimas", "Ewerton", "Mattos", "Ligia", "Rafael", "Bonin", "Marcelo", "Flávia"]
     ];
 
     let todayData = data.find(function (entry) {
@@ -117,7 +117,7 @@ async function main()
     textElement.style.position = "fixed";
     textElement.style.bottom = "10px";
     textElement.style.left = "10px";
-    textElement.textContent = "Escala de 25/07/2023 a 02/08/2023 (v1.0.3)";
+    textElement.textContent = "Escala de 01/08/2023 a 02/08/2023 (v1.0.4)";
 
     document.body.appendChild(textElement);
 
@@ -279,38 +279,37 @@ async function main()
             case 0:
             case 1:
             case 2:
-            case 3:
                 position = "Fixo";
                 break;
-            case 4:
+            case 3:
                 position = "10min (Suplente 1)";
                 break;
-            case 5:
+            case 4:
                 position = "20min (Suplente 2)";
                 break;
-            case 6:
+            case 5:
                 position = "30min (Suplente 3)";
                 break;
-            case 7:
+            case 6:
                 position = "Suplente 4";
                 break;
-            case 8:
+            case 7:
                 position = "Suplente 5";
                 break;
-            case 9:
+            case 8:
                 position = "Suplente 6";
                 break;
-            case 10:
+            case 9:
                 position = "Suplente 7";
                 break;
-            case 11:
+            case 10:
                 position = "Suplente 8";
                 break;
         }
 
         if (document.querySelector("#servico-1 > ul").children[0] === undefined)
         {
-            attendingList = availableEmployees.slice(0, 4);
+            attendingList = availableEmployees.slice(0, 3);
             document.querySelector("head > title").innerHTML = "[0] Fila vazia";
             if (index !== -1)
             {
@@ -343,37 +342,37 @@ async function main()
 
         if (largestTime === waitTime)
         {
-            attendingList = availableEmployees.slice(0, 4);
+            attendingList = availableEmployees.slice(0, 3);
             document.querySelector("body > div.container > div > div.header > h2").innerText = attendingList.join(" | ");
             console.log(`Funcionários atendendo: ${attendingList}`);
         }
         else if (currentTime >= "16:00:00")
         {
-            attendingList = availableEmployees.slice(3, 10);
+            attendingList = availableEmployees.slice(2, 9);
             document.querySelector("body > div.container > div > div.header > h2").innerText = attendingList.join(" | ");
             console.log(`Funcionários atendendo: ${attendingList}`);
         }
         else if (waitTime >= "00:30:00" || (currentTime >= "16:00:00" && currentTime < "17:00:00"))
         {
-            attendingList = availableEmployees.slice(0, 7);
+            attendingList = availableEmployees.slice(0, 6);
             document.querySelector("body > div.container > div > div.header > h2").innerText = attendingList.join(" | ");
             console.log(`Funcionários atendendo: ${attendingList}`);
         }
         else if (waitTime >= "00:20:00")
         {
-            attendingList = availableEmployees.slice(0, 6);
+            attendingList = availableEmployees.slice(0, 5);
             document.querySelector("body > div.container > div > div.header > h2").innerText = attendingList.join(" | ");
             console.log(`Funcionários atendendo: ${attendingList}`);
         }
         else if (waitTime >= "00:10:00")
         {
-            attendingList = availableEmployees.slice(0, 5);
+            attendingList = availableEmployees.slice(0, 4);
             document.querySelector("body > div.container > div > div.header > h2").innerText = attendingList.join(" | ");
             console.log(`Funcionários atendendo: ${attendingList}`);
         }
         else
         {
-            attendingList = availableEmployees.slice(0, 4);
+            attendingList = availableEmployees.slice(0, 3);
             document.querySelector("body > div.container > div > div.header > h2").innerText = attendingList.join(" | ");
             console.log(`Funcionários atendendo: ${attendingList}`);
         }
