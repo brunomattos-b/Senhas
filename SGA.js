@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SGA Monitor
 // @namespace    SGA Monitor - Escala
-// @version      1.0.5
+// @version      1.0.6
 // @downloadURL  https://raw.githubusercontent.com/brunomattos-b/SGA/main/SGA.js
 // @updateURL    https://raw.githubusercontent.com/brunomattos-b/SGA/main/SGA.js
 // @description  Exibe a escala do dia, e notifica quando o servidor tem que ir pro atendimento
@@ -121,7 +121,7 @@ async function main()
     textElement.style.position = "fixed";
     textElement.style.bottom = "10px";
     textElement.style.left = "10px";
-    textElement.textContent = "Escala de 03/08/2023 a 14/09/2023 (v1.0.5)";
+    textElement.textContent = "Escala de 03/08/2023 a 14/09/2023 (v1.0.6)";
 
     document.body.appendChild(textElement);
 
@@ -202,11 +202,11 @@ async function main()
 
         if (currentTime >= "11:00:00" && currentTime < "11:30:00")
         {
-            lunch.push("Vanessa");
+            //lunch.push("Vanessa");
         }
         else if (currentTime >= "11:30:00" && currentTime < "12:00:00")
         {
-            lunch.push("Vanessa");
+            //lunch.push("Vanessa");
             lunch.push("Dimas");
             lunch.push("Ewerton");
         }
@@ -214,21 +214,21 @@ async function main()
         {
             lunch.push("Dimas");
             lunch.push("Ewerton");
-            lunch.push("Jéssica");
+            //lunch.push("Jéssica");
             lunch.push("Bonin");
             lunch.push("Ligia");
             lunch.push("Flávia");
         }
         else if (currentTime >= "12:30:00" && currentTime < "13:00:00")
         {
-            lunch.push("Jéssica");
+            //lunch.push("Jéssica");
             lunch.push("Bonin");
             lunch.push("Ligia");
             lunch.push("Flávia");
         }
         else if (currentTime >= "13:00:00" && currentTime < "14:00:00")
         {
-            lunch.push("Larissa");
+            //lunch.push("Larissa");
             lunch.push("Rafael");
             lunch.push("Mattos");
             lunch.push("Marcelo");
