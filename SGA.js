@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SGA Monitor
 // @namespace    SGA Monitor - Escala
-// @version      1.0.6
+// @version      1.0.7
 // @downloadURL  https://raw.githubusercontent.com/brunomattos-b/SGA/main/SGA.js
 // @updateURL    https://raw.githubusercontent.com/brunomattos-b/SGA/main/SGA.js
 // @description  Exibe a escala do dia, e notifica quando o servidor tem que ir pro atendimento
@@ -39,35 +39,26 @@ async function main()
     let formattedDate = ("0" + day).slice(-2) + "/" + ("0" + month).slice(-2) + "/" + year;
 
     let data = [
-        ["03/08/2023", "Vanessa", "Mattos", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Ligia"],
-        ["04/08/2023", "Jéssica", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas"],
-        ["07/08/2023", "Vanessa", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin"],
-        ["08/08/2023", "Jéssica", "Flávia", "Cinthia", "Bonin", "Ewerton", "Ligia", "Rafael", "Dimas", "Marcelo"],
-        ["09/08/2023", "Vanessa", "Bonin", "Ewerton", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia"],
-        ["10/08/2023", "Jéssica", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Ligia"],
-        ["11/08/2023", "Vanessa", "Cinthia", "Bonin", "Ewerton", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia"],
-        ["14/08/2023", "Jéssica", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Ligia", "Rafael"],
-        ["15/08/2023", "Vanessa", "Ewerton", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin"],
-        ["16/08/2023", "Jéssica", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Ligia", "Rafael", "Dimas"],
-        ["17/08/2023", "Vanessa", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton"],
-        ["18/08/2023", "Jéssica", "Flávia", "Cinthia", "Bonin", "Ewerton", "Ligia", "Rafael", "Dimas", "Marcelo"],
-        ["21/08/2023", "Vanessa", "Bonin", "Ewerton", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia"],
-        ["22/08/2023", "Jéssica", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Ligia"],
-        ["23/08/2023", "Vanessa", "Cinthia", "Bonin", "Ewerton", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia"],
-        ["24/08/2023", "Jéssica", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Ligia", "Rafael"],
-        ["25/08/2023", "Vanessa", "Ewerton", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin"],
-        ["28/08/2023", "Larissa", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Ligia", "Rafael", "Dimas"],
-        ["29/08/2023", "Vanessa", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton"],
-        ["30/08/2023", "Larissa", "Dimas", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Ewerton", "Bonin"],
-        ["31/08/2023", "Vanessa", "Cinthia", "Bonin", "Ewerton", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia"],
-        ["01/09/2023", "Larissa", "Flávia", "Cinthia", "Bonin", "Ewerton", "Ligia", "Rafael", "Dimas", "Marcelo"],
-        ["04/09/2023", "Vanessa", "Bonin", "Ewerton", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia"],
-        ["05/09/2023", "Larissa", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Ligia"],
-        ["06/09/2023", "Vanessa", "Cinthia", "Bonin", "Ewerton", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia"],
-        ["11/09/2023", "Larissa", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Ligia", "Rafael"],
-        ["12/09/2023", "Vanessa", "Ewerton", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Mattos", "Bonin"],
-        ["13/09/2023", "Larissa", "Marcelo", "Flávia", "Mattos", "Bonin", "Ewerton", "Ligia", "Rafael", "Dimas"],
-        ["14/09/2023", "Vanessa", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos"]
+        ["18/09/2023", "Jéssica", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael"],
+        ["19/09/2023", "Vanessa", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo"],
+        ["20/09/2023", "Jéssica", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin"],
+        ["21/09/2023", "Vanessa", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos"],
+        ["22/09/2023", "Jéssica", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas"],
+        ["25/09/2023", "Vanessa", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia"],
+        ["26/09/2023", "Jéssica", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia"],
+        ["27/09/2023", "Vanessa", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton"],
+        ["28/09/2023", "Jéssica", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael"],
+        ["29/09/2023", "Vanessa", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo"],
+        ["02/10/2023", "Jéssica", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin"],
+        ["03/10/2023", "Vanessa", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos"],
+        ["04/10/2023", "Jéssica", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas"],
+        ["05/10/2023", "Vanessa", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia"],
+        ["06/10/2023", "Jéssica", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia"],
+        ["09/10/2023", "Vanessa", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton"],
+        ["10/10/2023", "Jéssica", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael"],
+        ["11/10/2023", "Vanessa", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo"],
+        ["16/10/2023", "Jéssica", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin", "Cinthia"],
+        ["17/10/2023", "Vanessa", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos"]
     ];
 
     let todayData = data.find(function (entry) {
@@ -121,7 +112,7 @@ async function main()
     textElement.style.position = "fixed";
     textElement.style.bottom = "10px";
     textElement.style.left = "10px";
-    textElement.textContent = "Escala de 03/08/2023 a 14/09/2023 (v1.0.6)";
+    textElement.textContent = "Escala de 18/09/2023 a 17/10/2023 (v1.0.7)";
 
     document.body.appendChild(textElement);
 
