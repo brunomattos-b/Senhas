@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SGA Monitor
 // @namespace    SGA Monitor - Escala
-// @version      1.0.7
+// @version      1.0.8
 // @downloadURL  https://raw.githubusercontent.com/brunomattos-b/SGA/main/SGA.js
 // @updateURL    https://raw.githubusercontent.com/brunomattos-b/SGA/main/SGA.js
 // @description  Exibe a escala do dia, e notifica quando o servidor tem que ir pro atendimento
@@ -39,29 +39,38 @@ async function main()
     let formattedDate = ("0" + day).slice(-2) + "/" + ("0" + month).slice(-2) + "/" + year;
 
     let data = [
-        ["18/09/2023", "Jéssica", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael"],
-        ["19/09/2023", "Vanessa", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo"],
-        ["20/09/2023", "Jéssica", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin"],
-        ["21/09/2023", "Vanessa", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos"],
-        ["22/09/2023", "Jéssica", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas"],
-        ["25/09/2023", "Vanessa", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia"],
-        ["26/09/2023", "Jéssica", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia"],
-        ["27/09/2023", "Vanessa", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton"],
-        ["28/09/2023", "Jéssica", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael"],
-        ["29/09/2023", "Vanessa", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo"],
-        ["02/10/2023", "Jéssica", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin"],
-        ["03/10/2023", "Vanessa", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos"],
-        ["04/10/2023", "Jéssica", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas"],
-        ["05/10/2023", "Vanessa", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia"],
-        ["06/10/2023", "Jéssica", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia"],
-        ["09/10/2023", "Vanessa", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton"],
-        ["10/10/2023", "Jéssica", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael"],
-        ["11/10/2023", "Vanessa", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo"],
-        ["16/10/2023", "Jéssica", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin", "Cinthia"],
-        ["17/10/2023", "Vanessa", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Cinthia", "Bonin", "Ewerton", "Mattos"]
+        ["18/10/2023", "Jéssica", "Marcelo", "Flávia", "Vanessa", "Mattos", "Dimas"],
+        ["19/10/2023", "Vanessa", "Jéssica", "Mattos", "Ligia", "Dimas", "Marcelo", "Flávia"],
+        ["20/10/2023", "Jéssica", "Vanessa", "Dimas", "Marcelo", "Flávia", "Ewerton", "Mattos", "Ligia"],
+        ["23/10/2023", "Vanessa", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Ewerton"],
+        ["24/10/2023", "Jéssica", "Dimas", "Marcelo", "Flávia", "Ewerton", "Mattos", "Ligia", "Rafael"],
+        ["25/10/2023", "Vanessa", "Flávia", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo"],
+        ["26/10/2023", "Jéssica", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Ewerton", "Mattos"],
+        ["27/10/2023", "Vanessa", "Marcelo", "Flávia", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas"],
+        ["30/10/2023", "Jéssica", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia"],
+        ["31/10/2023", "Vanessa", "Rafael", "Dimas", "Marcelo", "Flávia", "Ewerton", "Mattos", "Ligia"],
+        ["01/11/2023", "Jéssica", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Ewerton"],
+        ["06/11/2023", "Vanessa", "Dimas", "Marcelo", "Flávia", "Ewerton", "Mattos", "Ligia", "Rafael", "Bonin"],
+        ["07/11/2023", "Jéssica", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo"],
+        ["08/11/2023", "Vanessa", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin"],
+        ["09/11/2023", "Jéssica", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos"],
+        ["10/11/2023", "Vanessa", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael"],
+        ["13/11/2023", "Jéssica", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia"],
+        ["14/11/2023", "Vanessa", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton"],
+        ["16/11/2023", "Jéssica", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas"],
+        ["17/11/2023", "Vanessa", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia"],
+        ["21/11/2023", "Jéssica", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo"],
+        ["22/11/2023", "Vanessa", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin"],
+        ["23/11/2023", "Jéssica", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos"],
+        ["24/11/2023", "Vanessa", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael"],
+        ["27/11/2023", "Jéssica", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia"],
+        ["28/11/2023", "Vanessa", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton"],
+        ["29/11/2023", "Jéssica", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas"],
+        ["30/11/2023", "Vanessa", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia"]
     ];
 
-    let todayData = data.find(function (entry) {
+    let todayData = data.find(function (entry)
+    {
         return entry[0] === formattedDate;
     });
 
@@ -82,7 +91,8 @@ async function main()
     listContainer.style.left = "10px";
     listContainer.style.padding = "0";
 
-    employees.forEach((employee) => {
+    employees.forEach((employee) =>
+    {
         let listItem = document.createElement("li");
         listItem.style.listStyle = "none";
         listItem.style.marginBottom = "0px";
@@ -112,7 +122,7 @@ async function main()
     textElement.style.position = "fixed";
     textElement.style.bottom = "10px";
     textElement.style.left = "10px";
-    textElement.textContent = "Escala de 18/09/2023 a 17/10/2023 (v1.0.7)";
+    textElement.textContent = "Escala de 18/10/2023 a 30/11/2023 (v1.0.8)";
 
     document.body.appendChild(textElement);
 
@@ -141,7 +151,7 @@ async function main()
         {
             formattedTime += (unFormattedTime[unFormattedTime.length - i]);
         }
-        return(formattedTime);
+        return (formattedTime);
     }
 
     function latestTime(times)
@@ -164,7 +174,7 @@ async function main()
         let checkboxes = document.querySelectorAll("input[type='checkbox']");
 
         checkboxes.forEach((checkbox) =>
-                           {
+        {
             checkboxStates[checkbox.value] = checkbox.checked;
         });
 
@@ -228,14 +238,19 @@ async function main()
 
         let checkboxes = document.querySelectorAll("input[type='checkbox']");
 
-        checkboxes.forEach((checkbox) => {
-            checkbox.addEventListener("change", () => {
+        checkboxes.forEach((checkbox) =>
+        {
+            checkbox.addEventListener("change", () =>
+            {
                 let employee = checkbox.value;
-                if (checkbox.checked) {
+                if (checkbox.checked)
+                {
                     absentEmployees.push(employee);
-                } else {
+                } else
+                {
                     let index = absentEmployees.indexOf(employee);
-                    if (index !== -1) {
+                    if (index !== -1)
+                    {
                         absentEmployees.splice(index, 1);
                     }
                 }
