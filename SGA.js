@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SGA Monitor
 // @namespace    SGA Monitor - Escala
-// @version      1.0.8
+// @version      1.0.9
 // @downloadURL  https://raw.githubusercontent.com/brunomattos-b/SGA/main/SGA.js
 // @updateURL    https://raw.githubusercontent.com/brunomattos-b/SGA/main/SGA.js
 // @description  Exibe a escala do dia, e notifica quando o servidor tem que ir pro atendimento
@@ -15,7 +15,7 @@ async function main()
 {
     let usuario = document.querySelector("body > nav > div > div.collapse.navbar-collapse.novosga-navbar > ul.nav.navbar-nav.navbar-right > li > a").innerHTML;
 
-    let names = ["Bonin", "Cinthia", "Dimas", "Ewerton", "Flávia", "Ligia", "Marcelo", "Mattos", "Rafael"];
+    let names = ["Bonin", "Dimas", "Flávia", "Ligia", "Marcelo", "Mattos", "Rafael"];
     let servidor = "Unknown";
 
     for (var i = 0; i < names.length; i++)
@@ -39,34 +39,25 @@ async function main()
     let formattedDate = ("0" + day).slice(-2) + "/" + ("0" + month).slice(-2) + "/" + year;
 
     let data = [
-        ["18/10/2023", "Jéssica", "Marcelo", "Flávia", "Vanessa", "Mattos", "Dimas"],
-        ["19/10/2023", "Vanessa", "Jéssica", "Mattos", "Ligia", "Dimas", "Marcelo", "Flávia"],
-        ["20/10/2023", "Jéssica", "Vanessa", "Dimas", "Marcelo", "Flávia", "Ewerton", "Mattos", "Ligia"],
-        ["23/10/2023", "Vanessa", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Ewerton"],
-        ["24/10/2023", "Jéssica", "Dimas", "Marcelo", "Flávia", "Ewerton", "Mattos", "Ligia", "Rafael"],
-        ["25/10/2023", "Vanessa", "Flávia", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo"],
-        ["26/10/2023", "Jéssica", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Ewerton", "Mattos"],
-        ["27/10/2023", "Vanessa", "Marcelo", "Flávia", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas"],
-        ["30/10/2023", "Jéssica", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia"],
-        ["31/10/2023", "Vanessa", "Rafael", "Dimas", "Marcelo", "Flávia", "Ewerton", "Mattos", "Ligia"],
-        ["01/11/2023", "Jéssica", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Ewerton"],
-        ["06/11/2023", "Vanessa", "Dimas", "Marcelo", "Flávia", "Ewerton", "Mattos", "Ligia", "Rafael", "Bonin"],
-        ["07/11/2023", "Jéssica", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo"],
-        ["08/11/2023", "Vanessa", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin"],
-        ["09/11/2023", "Jéssica", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos"],
-        ["10/11/2023", "Vanessa", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael"],
-        ["13/11/2023", "Jéssica", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia"],
-        ["14/11/2023", "Vanessa", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton"],
-        ["16/11/2023", "Jéssica", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas"],
-        ["17/11/2023", "Vanessa", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia"],
-        ["21/11/2023", "Jéssica", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo"],
-        ["22/11/2023", "Vanessa", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin"],
-        ["23/11/2023", "Jéssica", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos"],
-        ["24/11/2023", "Vanessa", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael"],
-        ["27/11/2023", "Jéssica", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia"],
-        ["28/11/2023", "Vanessa", "Mattos", "Ligia", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton"],
-        ["29/11/2023", "Jéssica", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia", "Rafael", "Dimas"],
-        ["30/11/2023", "Vanessa", "Rafael", "Dimas", "Marcelo", "Flávia", "Bonin", "Ewerton", "Mattos", "Ligia"]
+        ["01/12/2023", "Vanessa", "Jéssica", "Bonin", "Flávia", "Dimas", "Rafael", "Mattos", "Marcelo"],
+        ["04/12/2023", "Vanessa", "Jéssica", "Marcelo", "Mattos", "Rafael", "Bonin", "Flávia", "Dimas"],
+        ["05/12/2023", "Vanessa", "Jéssica", "Flávia", "Dimas", "Bonin", "Marcelo", "Rafael", "Mattos"],
+        ["06/12/2023", "Vanessa", "Jéssica", "Mattos", "Rafael", "Marcelo", "Flávia", "Bonin", "Dimas"],
+        ["07/12/2023", "Vanessa", "Jéssica", "Dimas", "Bonin", "Flávia", "Mattos", "Marcelo", "Rafael"],
+        ["08/12/2023", "Vanessa", "Jéssica", "Rafael", "Marcelo", "Mattos", "Dimas", "Bonin", "Flávia"],
+        ["12/12/2023", "Vanessa", "Jéssica", "Dimas", "Flávia", "Bonin", "Rafael", "Mattos", "Marcelo"],
+        ["13/12/2023", "Vanessa", "Jéssica", "Marcelo", "Mattos", "Rafael", "Bonin", "Dimas", "Flávia"],
+        ["14/12/2023", "Vanessa", "Jéssica", "Flávia", "Dimas", "Bonin", "Marcelo", "Rafael", "Mattos"],
+        ["15/12/2023", "Vanessa", "Jéssica", "Mattos", "Rafael", "Marcelo", "Flávia", "Dimas", "Bonin"],
+        ["18/12/2023", "Vanessa", "Jéssica", "Dimas", "Bonin", "Flávia", "Mattos", "Marcelo", "Rafael"],
+        ["19/12/2023", "Vanessa", "Jéssica", "Rafael", "Marcelo", "Mattos", "Dimas", "Flávia", "Bonin"],
+        ["20/12/2023", "Vanessa", "Jéssica", "Bonin", "Flávia", "Dimas", "Rafael", "Mattos", "Marcelo"],
+        ["21/12/2023", "Vanessa", "Jéssica", "Marcelo", "Mattos", "Rafael", "Bonin", "Dimas", "Flávia"],
+        ["22/12/2023", "Vanessa", "Jéssica", "Flávia", "Dimas", "Bonin", "Marcelo", "Rafael", "Mattos"],
+        ["26/12/2023", "Vanessa", "Jéssica", "Mattos", "Rafael", "Marcelo", "Flávia", "Bonin", "Dimas"],
+        ["27/12/2023", "Vanessa", "Jéssica", "Dimas", "Bonin", "Flávia", "Mattos", "Marcelo", "Rafael"],
+        ["28/12/2023", "Vanessa", "Jéssica", "Rafael", "Marcelo", "Mattos", "Dimas", "Flávia", "Bonin"],
+        ["29/12/2023", "Vanessa", "Jéssica", "Bonin", "Rafael", "Dimas", "Flávia", "Mattos", "Marcelo"]
     ];
 
     let todayData = data.find(function (entry)
@@ -122,7 +113,7 @@ async function main()
     textElement.style.position = "fixed";
     textElement.style.bottom = "10px";
     textElement.style.left = "10px";
-    textElement.textContent = "Escala de 18/10/2023 a 30/11/2023 (v1.0.8)";
+    textElement.textContent = "Escala de 01/12/2023 a 29/12/2023 (v1.0.9)";
 
     document.body.appendChild(textElement);
 
@@ -203,37 +194,32 @@ async function main()
 
         if (currentTime >= "11:00:00" && currentTime < "11:30:00")
         {
-            //lunch.push("Vanessa");
+            lunch.push("Vanessa");
         }
         else if (currentTime >= "11:30:00" && currentTime < "12:00:00")
         {
-            //lunch.push("Vanessa");
+            lunch.push("Vanessa");
             lunch.push("Dimas");
-            lunch.push("Ewerton");
         }
         else if (currentTime >= "12:00:00" && currentTime < "12:30:00")
         {
             lunch.push("Dimas");
-            lunch.push("Ewerton");
-            //lunch.push("Jéssica");
             lunch.push("Bonin");
             lunch.push("Ligia");
             lunch.push("Flávia");
         }
         else if (currentTime >= "12:30:00" && currentTime < "13:00:00")
         {
-            //lunch.push("Jéssica");
             lunch.push("Bonin");
             lunch.push("Ligia");
             lunch.push("Flávia");
         }
         else if (currentTime >= "13:00:00" && currentTime < "14:00:00")
         {
-            //lunch.push("Larissa");
             lunch.push("Rafael");
             lunch.push("Mattos");
             lunch.push("Marcelo");
-            lunch.push("Cinthia");
+            lunch.push("Jéssica");
         }
 
         let checkboxes = document.querySelectorAll("input[type='checkbox']");
@@ -295,10 +281,10 @@ async function main()
                 position = "20 minutos ou 10 na fila (Suplente 1)";
                 break;
             case 4:
-                position = "30 minutos ou 25 na fila (Suplente 2)";
+                position = "30 minutos ou 20 na fila (Suplente 2)";
                 break;
             case 5:
-                position = "30 minutos ou 25 na fila (Suplente 3)";
+                position = "30 minutos ou 20 na fila (Suplente 3)";
                 break;
             case 6:
                 position = "Suplente 4";
@@ -362,7 +348,7 @@ async function main()
             document.querySelector("body > div.container > div > div.header > h2").innerText = attendingList.join(" | ");
             console.log(`Funcionários atendendo: ${attendingList}`);
         }
-        else if (waitTime >= "00:30:00" || queue >= 25)
+        else if (waitTime >= "00:30:00" || queue >= 20)
         {
             attendingList = availableEmployees.slice(0, 6);
             document.querySelector("body > div.container > div > div.header > h2").innerText = attendingList.join(" | ");
