@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SGA Monitor
 // @namespace    SGA Monitor - Escala
-// @version      1.0.9
+// @version      1.0.10
 // @downloadURL  https://raw.githubusercontent.com/brunomattos-b/SGA/main/SGA.js
 // @updateURL    https://raw.githubusercontent.com/brunomattos-b/SGA/main/SGA.js
 // @description  Exibe a escala do dia, e notifica quando o servidor tem que ir pro atendimento
@@ -15,7 +15,7 @@ async function main()
 {
     let usuario = document.querySelector("body > nav > div > div.collapse.navbar-collapse.novosga-navbar > ul.nav.navbar-nav.navbar-right > li > a").innerHTML;
 
-    let names = ["Bonin", "Dimas", "Flávia", "Ligia", "Marcelo", "Mattos", "Rafael"];
+    let names = ["Alessandra", "Bonin", "Dimas", "Flávia", "Joanan", "Ligia", "Luis", "Marcelo", "Mattos", "Rafael"];
     let servidor = "Unknown";
 
     for (var i = 0; i < names.length; i++)
@@ -39,29 +39,34 @@ async function main()
     let formattedDate = ("0" + day).slice(-2) + "/" + ("0" + month).slice(-2) + "/" + year;
 
     let data = [
-        ["01/12/2023", "Vanessa", "Jéssica", "Bonin", "Flávia", "Dimas", "Rafael", "Mattos", "Marcelo"],
-        ["04/12/2023", "Vanessa", "Jéssica", "Marcelo", "Mattos", "Rafael", "Bonin", "Flávia", "Dimas"],
-        ["05/12/2023", "Vanessa", "Jéssica", "Flávia", "Dimas", "Bonin", "Marcelo", "Rafael", "Mattos"],
-        ["06/12/2023", "Vanessa", "Jéssica", "Mattos", "Rafael", "Marcelo", "Flávia", "Bonin", "Dimas"],
-        ["07/12/2023", "Vanessa", "Jéssica", "Dimas", "Bonin", "Flávia", "Mattos", "Marcelo", "Rafael"],
-        ["08/12/2023", "Vanessa", "Jéssica", "Rafael", "Marcelo", "Mattos", "Dimas", "Bonin", "Flávia"],
-        ["12/12/2023", "Vanessa", "Jéssica", "Dimas", "Flávia", "Bonin", "Rafael", "Mattos", "Marcelo"],
-        ["13/12/2023", "Vanessa", "Jéssica", "Marcelo", "Mattos", "Rafael", "Bonin", "Dimas", "Flávia"],
-        ["14/12/2023", "Vanessa", "Jéssica", "Flávia", "Dimas", "Bonin", "Marcelo", "Rafael", "Mattos"],
-        ["15/12/2023", "Vanessa", "Jéssica", "Mattos", "Rafael", "Marcelo", "Flávia", "Dimas", "Bonin"],
-        ["18/12/2023", "Vanessa", "Jéssica", "Dimas", "Bonin", "Flávia", "Mattos", "Marcelo", "Rafael"],
-        ["19/12/2023", "Vanessa", "Jéssica", "Rafael", "Marcelo", "Mattos", "Dimas", "Flávia", "Bonin"],
-        ["20/12/2023", "Vanessa", "Jéssica", "Bonin", "Flávia", "Dimas", "Rafael", "Mattos", "Marcelo"],
-        ["21/12/2023", "Vanessa", "Jéssica", "Marcelo", "Mattos", "Rafael", "Bonin", "Dimas", "Flávia"],
-        ["22/12/2023", "Vanessa", "Jéssica", "Flávia", "Dimas", "Bonin", "Marcelo", "Rafael", "Mattos"],
-        ["26/12/2023", "Vanessa", "Jéssica", "Mattos", "Rafael", "Marcelo", "Flávia", "Bonin", "Dimas"],
-        ["27/12/2023", "Vanessa", "Jéssica", "Dimas", "Bonin", "Flávia", "Mattos", "Marcelo", "Rafael"],
-        ["28/12/2023", "Vanessa", "Jéssica", "Rafael", "Marcelo", "Mattos", "Dimas", "Flávia", "Bonin"],
-        ["29/12/2023", "Vanessa", "Jéssica", "Bonin", "Rafael", "Dimas", "Flávia", "Mattos", "Marcelo"]
+        ["02/01/2024", "Vanessa", "Jéssica", "Dimas", "Flávia", "Joanan", "Bonin", "Marcelo", "Mattos", "Rafael", "Luis"],
+        ["03/01/2024", "Vanessa", "Jéssica", "Marcelo", "Mattos", "Rafael", "Joanan", "Dimas", "Flávia", "Bonin", "Luis"],
+        ["04/01/2024", "Vanessa", "Jéssica", "Bonin", "Dimas", "Flávia", "Luis", "Joanan", "Rafael", "Mattos", "Marcelo"],
+        ["05/01/2024", "Vanessa", "Jéssica", "Marcelo", "Luis", "Rafael", "Mattos", "Bonin", "Dimas", "Flávia", "Joanan"],
+        ["08/01/2024", "Vanessa", "Jéssica", "Joanan", "Bonin", "Dimas", "Flávia", "Rafael", "Marcelo", "Mattos", "Luis"],
+        ["09/01/2024", "Vanessa", "Jéssica", "Luis", "Mattos", "Rafael", "Marcelo", "Flávia", "Joanan", "Dimas", "Bonin"],
+        ["10/01/2024", "Vanessa", "Jéssica", "Flávia", "Joanan", "Bonin", "Dimas", "Mattos", "Luis", "Rafael", "Marcelo"],
+        ["11/01/2024", "Vanessa", "Jéssica", "Marcelo", "Mattos", "Luis", "Rafael", "Bonin", "Flávia", "Joanan", "Dimas"],
+        ["12/01/2024", "Vanessa", "Jéssica", "Dimas", "Flávia", "Joanan", "Bonin", "Rafael", "Marcelo", "Mattos", "Luis"],
+        ["15/01/2024", "Vanessa", "Jéssica", "Marcelo", "Luis", "Rafael", "Joanan", "Mattos", "Bonin", "Flávia", "Dimas"],
+        ["16/01/2024", "Vanessa", "Jéssica", "Bonin", "Dimas", "Flávia", "Luis", "Mattos", "Joanan", "Marcelo", "Rafael"],
+        ["17/01/2024", "Vanessa", "Jéssica", "Luis", "Mattos", "Rafael", "Marcelo", "Bonin", "Flávia", "Joanan", "Dimas"],
+        ["18/01/2024", "Vanessa", "Jéssica", "Joanan", "Bonin", "Dimas", "Flávia", "Rafael", "Luis", "Marcelo", "Mattos"],
+        ["19/01/2024", "Vanessa", "Jéssica", "Marcelo", "Mattos", "Luis", "Rafael", "Dimas", "Joanan", "Bonin", "Flávia"],
+        ["22/01/2024", "Vanessa", "Jéssica", "Flávia", "Joanan", "Bonin", "Mattos", "Luis", "Marcelo", "Dimas", "Rafael"],
+        ["23/01/2024", "Vanessa", "Jéssica", "Marcelo", "Luis", "Rafael", "Dimas", "Bonin", "Flávia", "Mattos", "Joanan"],
+        ["24/01/2024", "Vanessa", "Jéssica", "Dimas", "Flávia", "Joanan", "Bonin", "Mattos", "Rafael", "Luis", "Marcelo"],
+        ["25/01/2024", "Vanessa", "Jéssica", "Luis", "Mattos", "Rafael", "Joanan", "Dimas", "Marcelo", "Bonin", "Flávia"],
+        ["26/01/2024", "Vanessa", "Jéssica", "Bonin", "Dimas", "Flávia", "Luis", "Joanan", "Mattos", "Rafael", "Marcelo"],
+        ["29/01/2024", "Vanessa", "Jéssica", "Marcelo", "Mattos", "Luis", "Rafael", "Dimas", "Bonin", "Flávia", "Joanan"],
+        ["30/01/2024", "Vanessa", "Jéssica", "Joanan", "Bonin", "Dimas", "Marcelo", "Luis", "Flávia", "Rafael", "Mattos"],
+        ["31/01/2024", "Vanessa", "Jéssica", "Marcelo", "Mattos", "Rafael", "Dimas", "Joanan", "Luis", "Flávia", "Bonin"],
+        ["01/02/2024", "Vanessa", "Jéssica", "Flávia", "Joanan", "Bonin", "Mattos", "Rafael", "Marcelo", "Luis", "Dimas"],
+        ["02/02/2024", "Vanessa", "Jéssica", "Marcelo", "Mattos", "Rafael", "Flávia", "Luis", "Dimas", "Joanan", "Bonin"],
     ];
 
     let todayData = data.find(function (entry)
-    {
+                              {
         return entry[0] === formattedDate;
     });
 
@@ -83,7 +88,7 @@ async function main()
     listContainer.style.padding = "0";
 
     employees.forEach((employee) =>
-    {
+                      {
         let listItem = document.createElement("li");
         listItem.style.listStyle = "none";
         listItem.style.marginBottom = "0px";
@@ -113,7 +118,7 @@ async function main()
     textElement.style.position = "fixed";
     textElement.style.bottom = "10px";
     textElement.style.left = "10px";
-    textElement.textContent = "Escala de 01/12/2023 a 29/12/2023 (v1.0.9)";
+    textElement.textContent = "Escala de 02/01/2024 a 02/02/2024 (v1.0.10)";
 
     document.body.appendChild(textElement);
 
@@ -165,7 +170,7 @@ async function main()
         let checkboxes = document.querySelectorAll("input[type='checkbox']");
 
         checkboxes.forEach((checkbox) =>
-        {
+                           {
             checkboxStates[checkbox.value] = checkbox.checked;
         });
 
@@ -207,12 +212,16 @@ async function main()
             lunch.push("Bonin");
             lunch.push("Ligia");
             lunch.push("Flávia");
+            lunch.push("Joanan");
+            lunch.push("Luis");
         }
         else if (currentTime >= "12:30:00" && currentTime < "13:00:00")
         {
             lunch.push("Bonin");
             lunch.push("Ligia");
             lunch.push("Flávia");
+            lunch.push("Joanan");
+            lunch.push("Luis");
         }
         else if (currentTime >= "13:00:00" && currentTime < "14:00:00")
         {
@@ -225,9 +234,9 @@ async function main()
         let checkboxes = document.querySelectorAll("input[type='checkbox']");
 
         checkboxes.forEach((checkbox) =>
-        {
+                           {
             checkbox.addEventListener("change", () =>
-            {
+                                      {
                 let employee = checkbox.value;
                 if (checkbox.checked)
                 {
@@ -275,46 +284,48 @@ async function main()
             case 0:
             case 1:
             case 2:
+            case 3:
+            case 4:
                 position = "Fixo";
                 break;
-            case 3:
+            case 5:
                 position = "20 minutos ou 10 na fila (Suplente 1)";
                 break;
-            case 4:
+            case 6:
                 position = "30 minutos ou 20 na fila (Suplente 2)";
                 break;
-            case 5:
+            case 7:
                 position = "30 minutos ou 20 na fila (Suplente 3)";
                 break;
-            case 6:
+            case 8:
                 position = "Suplente 4";
                 break;
-            case 7:
-                position = "Suplente 5";
-                break;
-            case 8:
-                position = "Suplente 6";
-                break;
             case 9:
-                position = "Suplente 7";
-                break;
-            case 10:
-                position = "Suplente 8";
+                position = "Suplente 5";
                 break;
         }
 
         if (document.querySelector("#servico-1 > ul").children[0] === undefined)
         {
-            attendingList = availableEmployees.slice(0, 3);
+            attendingList = availableEmployees.slice(0, 5);
             document.querySelector("head > title").innerHTML = "[0] Fila vazia";
-            if (index !== -1)
+
+            if (servidor === "Alessandra")
             {
-                document.querySelector("body > div.container > div > div.header > p").innerText = `[0] Fila vazia | Sua posição atual é: ${position}`;
+                document.querySelector("body > div.container > div > div.header > p").innerText = `[0] Fila vazia | Você está logado como Alessandra - Chefe do atendimento`;
             }
             else
             {
-                document.querySelector("body > div.container > div > div.header > p").innerText = `[0] Fila vazia | Você está no seu horário de almoço ou ausente`;
+                if (index !== -1)
+                {
+                    document.querySelector("body > div.container > div > div.header > p").innerText = `[0] Fila vazia | Sua posição atual é: ${position}`;
+                }
+                else
+                {
+                    document.querySelector("body > div.container > div > div.header > p").innerText = `[0] Fila vazia | Você está no seu horário de almoço ou ausente`;
+                }
             }
+
             document.querySelector("body > div.container > div > div.header > h2").innerText = attendingList.join(" | ");
 
             console.log(`Funcionários ausentes: ${absentEmployees}`);
@@ -338,31 +349,31 @@ async function main()
 
         if (largestTime === waitTime)
         {
-            attendingList = availableEmployees.slice(0, 3);
+            attendingList = availableEmployees.slice(0, 5);
             document.querySelector("body > div.container > div > div.header > h2").innerText = attendingList.join(" | ");
             console.log(`Funcionários atendendo: ${attendingList}`);
         }
         else if (currentTime >= "16:00:00")
         {
-            attendingList = availableEmployees.slice(2, 9);
+            attendingList = availableEmployees.slice(2, 10);
             document.querySelector("body > div.container > div > div.header > h2").innerText = attendingList.join(" | ");
             console.log(`Funcionários atendendo: ${attendingList}`);
         }
         else if (waitTime >= "00:30:00" || queue >= 20)
         {
-            attendingList = availableEmployees.slice(0, 6);
+            attendingList = availableEmployees.slice(0, 8);
             document.querySelector("body > div.container > div > div.header > h2").innerText = attendingList.join(" | ");
             console.log(`Funcionários atendendo: ${attendingList}`);
         }
         else if (waitTime >= "00:20:00" || queue >= 10)
         {
-            attendingList = availableEmployees.slice(0, 4);
+            attendingList = availableEmployees.slice(0, 6);
             document.querySelector("body > div.container > div > div.header > h2").innerText = attendingList.join(" | ");
             console.log(`Funcionários atendendo: ${attendingList}`);
         }
         else
         {
-            attendingList = availableEmployees.slice(0, 3);
+            attendingList = availableEmployees.slice(0, 5);
             document.querySelector("body > div.container > div > div.header > h2").innerText = attendingList.join(" | ");
             console.log(`Funcionários atendendo: ${attendingList}`);
         }
@@ -371,12 +382,22 @@ async function main()
         if (largestTime === waitTime)
         {
             document.querySelector("head > title").innerHTML = "[0] Fila vazia";
-            document.querySelector("body > div.container > div > div.header > p").innerText = `[0] Fila vazia | Sua posição atual é: ${position}`;
+
+            if (servidor === "Alessandra")
+            {
+                document.querySelector("body > div.container > div > div.header > p").innerText = `[0] Fila vazia | Você está logado como Alessandra - Chefe do atendimento`;
+            }
+            else
+            {
+                document.querySelector("body > div.container > div > div.header > p").innerText = `[0] Fila vazia | Sua posição atual é: ${position}`;
+            }
+
             console.log(`Tempo de espera: Fila Vazia`);
         }
         else
         {
             document.querySelector("head > title").innerHTML = `[${queue}] ${waitTime}`;
+
             if (index !== -1)
             {
                 if (currentTime >= "16:00:00")
@@ -397,8 +418,16 @@ async function main()
             }
             else
             {
-                document.querySelector("body > div.container > div > div.header > p").innerText = `[${queue}] Tempo de espera: ${waitTime} | Você está no seu horário de almoço ou ausente`;
+                if (servidor === "Alessandra")
+                {
+                    document.querySelector("body > div.container > div > div.header > p").innerText = `[${queue}] Tempo de espera: ${waitTime} | Você está logado como Alessandra - Chefe do atendimento`;
+                }
+                else
+                {
+                    document.querySelector("body > div.container > div > div.header > p").innerText = `[${queue}] Tempo de espera: ${waitTime} | Você está no seu horário de almoço ou ausente`;
+                }
             }
+
             console.log(`Tempo de espera: ${waitTime}`);
         }
 
