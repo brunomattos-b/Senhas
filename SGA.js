@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SGA Monitor
 // @namespace    SGA Monitor - Escala
-// @version      1.0.10
+// @version      1.0.11
 // @downloadURL  https://raw.githubusercontent.com/brunomattos-b/SGA/main/SGA.js
 // @updateURL    https://raw.githubusercontent.com/brunomattos-b/SGA/main/SGA.js
 // @description  Exibe a escala do dia, e notifica quando o servidor tem que ir pro atendimento
@@ -43,26 +43,26 @@ async function main()
         ["03/01/2024", "Vanessa", "Jéssica", "Marcelo", "Mattos", "Rafael", "Joanan", "Dimas", "Flávia", "Bonin", "Luis"],
         ["04/01/2024", "Vanessa", "Jéssica", "Bonin", "Dimas", "Flávia", "Luis", "Joanan", "Rafael", "Mattos", "Marcelo"],
         ["05/01/2024", "Vanessa", "Jéssica", "Marcelo", "Luis", "Rafael", "Mattos", "Bonin", "Dimas", "Flávia", "Joanan"],
-        ["08/01/2024", "Vanessa", "Jéssica", "Joanan", "Bonin", "Dimas", "Flávia", "Rafael", "Marcelo", "Mattos", "Luis"],
+        ["08/01/2024", "Vanessa", "Jéssica", "Joanan", "Luis", "Dimas", "Flávia", "Rafael", "Marcelo", "Mattos", "Bonin"],
         ["09/01/2024", "Vanessa", "Jéssica", "Luis", "Mattos", "Rafael", "Marcelo", "Flávia", "Joanan", "Dimas", "Bonin"],
         ["10/01/2024", "Vanessa", "Jéssica", "Flávia", "Joanan", "Bonin", "Dimas", "Mattos", "Luis", "Rafael", "Marcelo"],
         ["11/01/2024", "Vanessa", "Jéssica", "Marcelo", "Mattos", "Luis", "Rafael", "Bonin", "Flávia", "Joanan", "Dimas"],
         ["12/01/2024", "Vanessa", "Jéssica", "Dimas", "Flávia", "Joanan", "Bonin", "Rafael", "Marcelo", "Mattos", "Luis"],
         ["15/01/2024", "Vanessa", "Jéssica", "Marcelo", "Luis", "Rafael", "Joanan", "Mattos", "Bonin", "Flávia", "Dimas"],
         ["16/01/2024", "Vanessa", "Jéssica", "Bonin", "Dimas", "Flávia", "Luis", "Mattos", "Joanan", "Marcelo", "Rafael"],
-        ["17/01/2024", "Vanessa", "Jéssica", "Luis", "Mattos", "Rafael", "Marcelo", "Bonin", "Flávia", "Joanan", "Dimas"],
-        ["18/01/2024", "Vanessa", "Jéssica", "Joanan", "Bonin", "Dimas", "Flávia", "Rafael", "Luis", "Marcelo", "Mattos"],
-        ["19/01/2024", "Vanessa", "Jéssica", "Marcelo", "Mattos", "Luis", "Rafael", "Dimas", "Joanan", "Bonin", "Flávia"],
-        ["22/01/2024", "Vanessa", "Jéssica", "Flávia", "Joanan", "Bonin", "Mattos", "Luis", "Marcelo", "Dimas", "Rafael"],
-        ["23/01/2024", "Vanessa", "Jéssica", "Marcelo", "Luis", "Rafael", "Dimas", "Bonin", "Flávia", "Mattos", "Joanan"],
-        ["24/01/2024", "Vanessa", "Jéssica", "Dimas", "Flávia", "Joanan", "Bonin", "Mattos", "Rafael", "Luis", "Marcelo"],
-        ["25/01/2024", "Vanessa", "Jéssica", "Luis", "Mattos", "Rafael", "Joanan", "Dimas", "Marcelo", "Bonin", "Flávia"],
-        ["26/01/2024", "Vanessa", "Jéssica", "Bonin", "Dimas", "Flávia", "Luis", "Joanan", "Mattos", "Rafael", "Marcelo"],
-        ["29/01/2024", "Vanessa", "Jéssica", "Marcelo", "Mattos", "Luis", "Rafael", "Dimas", "Bonin", "Flávia", "Joanan"],
-        ["30/01/2024", "Vanessa", "Jéssica", "Joanan", "Bonin", "Dimas", "Marcelo", "Luis", "Flávia", "Rafael", "Mattos"],
-        ["31/01/2024", "Vanessa", "Jéssica", "Marcelo", "Mattos", "Rafael", "Dimas", "Joanan", "Luis", "Flávia", "Bonin"],
-        ["01/02/2024", "Vanessa", "Jéssica", "Flávia", "Joanan", "Bonin", "Mattos", "Rafael", "Marcelo", "Luis", "Dimas"],
-        ["02/02/2024", "Vanessa", "Jéssica", "Marcelo", "Mattos", "Rafael", "Flávia", "Luis", "Dimas", "Joanan", "Bonin"],
+        ["17/01/2024", "Vanessa", "Jéssica", "Mattos", "Rafael", "Marcelo", "Bonin", "Flávia", "Joanan", "Dimas"],
+        ["18/01/2024", "Vanessa", "Jéssica", "Joanan", "Bonin", "Dimas", "Flávia", "Rafael", "Marcelo", "Mattos"],
+        ["19/01/2024", "Vanessa", "Jéssica", "Marcelo", "Mattos", "Rafael", "Dimas", "Joanan", "Bonin", "Flávia"],
+        ["22/01/2024", "Vanessa", "Jéssica", "Flávia", "Joanan", "Bonin", "Mattos", "Marcelo", "Dimas", "Rafael"],
+        ["23/01/2024", "Vanessa", "Jéssica", "Marcelo", "Rafael", "Dimas", "Bonin", "Flávia", "Mattos", "Joanan"],
+        ["24/01/2024", "Vanessa", "Jéssica", "Dimas", "Flávia", "Joanan", "Bonin", "Mattos", "Rafael", "Marcelo"],
+        ["25/01/2024", "Vanessa", "Jéssica", "Mattos", "Rafael", "Joanan", "Dimas", "Marcelo", "Bonin", "Flávia"],
+        ["26/01/2024", "Vanessa", "Jéssica", "Bonin", "Dimas", "Flávia", "Joanan", "Mattos", "Rafael", "Marcelo"],
+        ["29/01/2024", "Vanessa", "Jéssica", "Marcelo", "Mattos", "Rafael", "Dimas", "Bonin", "Flávia", "Joanan"],
+        ["30/01/2024", "Vanessa", "Jéssica", "Joanan", "Bonin", "Dimas", "Marcelo", "Flávia", "Rafael", "Mattos"],
+        ["31/01/2024", "Vanessa", "Jéssica", "Marcelo", "Mattos", "Rafael", "Dimas", "Joanan", "Flávia", "Bonin"],
+        ["01/02/2024", "Vanessa", "Jéssica", "Flávia", "Joanan", "Bonin", "Mattos", "Rafael", "Marcelo", "Dimas"],
+        ["02/02/2024", "Vanessa", "Jéssica", "Marcelo", "Mattos", "Rafael", "Flávia", "Dimas", "Joanan", "Bonin"],
     ];
 
     let todayData = data.find(function (entry)
@@ -118,7 +118,7 @@ async function main()
     textElement.style.position = "fixed";
     textElement.style.bottom = "10px";
     textElement.style.left = "10px";
-    textElement.textContent = "Escala de 02/01/2024 a 02/02/2024 (v1.0.10)";
+    textElement.textContent = "Escala de 02/01/2024 a 02/02/2024 (v1.0.11)";
 
     document.body.appendChild(textElement);
 
@@ -292,13 +292,13 @@ async function main()
                 position = "20 minutos ou 10 na fila (Suplente 1)";
                 break;
             case 6:
-                position = "30 minutos ou 20 na fila (Suplente 2)";
+                position = "20 minutos ou 10 na fila (Suplente 2)";
                 break;
             case 7:
                 position = "30 minutos ou 20 na fila (Suplente 3)";
                 break;
             case 8:
-                position = "Suplente 4";
+                position = "30 minutos ou 20 na fila (Suplente 4)";
                 break;
             case 9:
                 position = "Suplente 5";
@@ -355,19 +355,19 @@ async function main()
         }
         else if (currentTime >= "16:00:00")
         {
-            attendingList = availableEmployees.slice(2, 10);
+            attendingList = availableEmployees.slice(2, 9);
             document.querySelector("body > div.container > div > div.header > h2").innerText = attendingList.join(" | ");
             console.log(`Funcionários atendendo: ${attendingList}`);
         }
         else if (waitTime >= "00:30:00" || queue >= 20)
         {
-            attendingList = availableEmployees.slice(0, 8);
+            attendingList = availableEmployees.slice(0, 9);
             document.querySelector("body > div.container > div > div.header > h2").innerText = attendingList.join(" | ");
             console.log(`Funcionários atendendo: ${attendingList}`);
         }
         else if (waitTime >= "00:20:00" || queue >= 10)
         {
-            attendingList = availableEmployees.slice(0, 6);
+            attendingList = availableEmployees.slice(0, 7);
             document.querySelector("body > div.container > div > div.header > h2").innerText = attendingList.join(" | ");
             console.log(`Funcionários atendendo: ${attendingList}`);
         }
