@@ -2,9 +2,9 @@
 // @name         Senhas iiBrasil
 // @namespace    Senhas_iiBrasil
 // @version      1.0.0
-// @downloadURL  https://raw.githubusercontent.com/brunomattos-b/SGA/main/SGA.js
-// @updateURL    https://raw.githubusercontent.com/brunomattos-b/SGA/main/SGA.js
-// @description  Exibe a escala do dia, e notifica quando o servidor tem que ir pro atendimento
+// @downloadURL  https://raw.githubusercontent.com/brunomattos-b/SGA/main/iiBrasil.js
+// @updateURL    https://raw.githubusercontent.com/brunomattos-b/SGA/main/iiBrasil.js
+// @description  Calcula a quantidade de senhas e o maior tempo de espera
 // @author       Bruno Mattos Barbalho
 // @include      https://limeira.iibrasil.com.br/atende/atende_dashboard.php*
 // @icon         http*://www.google.com/s2/favicons?sz=64&domain=0.43
