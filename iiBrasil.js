@@ -2,8 +2,8 @@
 // @name         Senhas iiBrasil
 // @namespace    Senhas_iiBrasil
 // @version      1.0.0
-// @downloadURL  https://raw.githubusercontent.com/brunomattos-b/senhas/main/iiBrasil.js
-// @updateURL    https://raw.githubusercontent.com/brunomattos-b/senhas/main/iiBrasil.js
+// @downloadURL  https://raw.githubusercontent.com/brunomattos-b/senhas/main/iibrasil.js
+// @updateURL    https://raw.githubusercontent.com/brunomattos-b/senhas/main/iibrasil.js
 // @description  Calcula a quantidade de senhas e o maior tempo de espera
 // @author       Bruno Mattos Barbalho
 // @include      https://limeira.iibrasil.com.br/atende/atende_dashboard.php*
