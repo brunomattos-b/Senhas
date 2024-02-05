@@ -117,7 +117,7 @@ async function main()
             if(!document.querySelector("#tabela_proximos > tbody > tr:nth-child(1) > td:nth-child(3)"))
             {
                 document.querySelector("head > title").innerHTML = `[0] Fila vazia`;
-                document.querySelector("#content_pages > div.row.proximos_fila > h4").innerHTML = `[0] Vazio`;
+                document.querySelector("#content_pages > div.row.proximos_fila > h4").innerHTML = `[0] Fila vazia`;
                 await sleep(1000);
                 refresh();
             }
